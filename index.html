@@ -47,7 +47,7 @@
           reposToAdd = '';
 
       $.each(repos, function(index, item){
-        var title = '<h2><a href="' + item.url + '">' + item.name + '</a></h2>';
+        var title = '<h2><a href="' + item.html_url + '">' + item.name + '</a></h2>';
         var description = '<p>' + item.description + '</p>';
         reposToAdd += '<li class="repo">' + title + description + '</li>';
       });
