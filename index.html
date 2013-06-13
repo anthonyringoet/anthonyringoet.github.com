@@ -12,7 +12,7 @@
   small{font-size:0.7em;}
   a{text-decoration: none; color:rgb(20,150,240); padding: 1px;}
   a:link, a:visited, a:active{ color:rgb(20,150,240);}
-  a:hover, a:focus {border-radius:2px; border:none; background: rgb(20,150,240); background: rgba(20,150,240,0.7); color:#fff; }
+  a:hover, a:focus {border:none; background: rgb(20,150,240); background: rgba(20,150,240,0.7); color:#fff; }
   .repo-listing{
     padding:0;
     margin:1em 0 0;
@@ -33,7 +33,7 @@
  	<h1><a href="http://anthonyringoet.be">Anthony Ringoet</a> on Github</h1>
   	<p>Hi. I'm a github page.</p>
 	<p>Visit <a href="http://github.com/anthonyringoet">me and my other repo friends.</a></p>
-  <ul class="repo-listing"></ul>
+  <ul class="repo-listing"><li class="repo">Loading from github api…</li></ul>
 
   <small>High five to <a href="http://zeptojs.com/">Zepto</a> and <a href="http://api.github.com/">Github Api</a></small>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/zepto/0.7/zepto.min.js"></script>
@@ -47,12 +47,15 @@
           reposToAdd = '';
 
       $.each(repos, function(index, item){
-        var title = '<h2><a href="' + item.html_url + '">' + item.name + '</a></h2>';
-        var description = '<p>' + item.description + '</p>';
-        reposToAdd += '<li class="repo">' + title + description + '</li>';
+        console.log(item);
+        if(!item.fork){
+          var title = '<h2><a href="' + item.html_url + '">' + item.name + '</a></h2>';
+          var description = '<p>' + item.description + '</p>';
+          reposToAdd += '<li class="repo">' + title + description + '</li>';
+        }
       });
 
-      listing.append(reposToAdd);
+      listing.html(reposToAdd);
     });
   })(Zepto);
   </script>
