@@ -1,6 +1,6 @@
 ---
-title: anthonyringoet.github.com
+title: anthonyringoet.github.io
 ---
 
-Hi. I'm a <a href="http://anthonyringoet.github.com">github page.</a>
+Hi. I'm a <a href="https://anthonyringoet.github.io">github page.</a>
 Visit <a href="http://github.com/anthonyringoet">me and my other repo friends.</a>
