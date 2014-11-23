@@ -47,7 +47,6 @@
           reposToAdd = '';
 
       $.each(repos, function(index, item){
-        console.log(item);
         if(!item.fork){
           var title = '<h2><a href="' + item.html_url + '">' + item.name + '</a></h2>';
           var description = '<p>' + item.description + '</p>';
